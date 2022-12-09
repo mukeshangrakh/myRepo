@@ -36,6 +36,12 @@ jobs:
           test-results-junit: test-results/results.xml
           code-coverage-cobertura: code-coverage/coverage.xml
           
+      # Runtests
+      - name: Run Coverage
+        uses: matlab-actions/run-command@v1
+        with:
+          command: utils.runCodeCoverage();
+          
        #Add files to repository
       - name: Add-files
         if: always()
